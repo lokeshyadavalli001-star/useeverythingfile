@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Default Light Mode CSS Variables */
+  --surface-950: 248 250 252; /* #f8fafc - main canvas */
+  --surface-900: 255 255 255; /* #ffffff - cards */
+  --surface-850: 241 245 249; /* #f1f5f9 - card hover / elevated */
+  --surface-800: 226 232 240; /* #e2e8f0 - soft borders */
+  --surface-700: 203 213 225; /* #cbd5e1 - borders */
+  --surface-400: 100 116 139; /* #64748b - muted text */
+  --surface-300: 71 85 105;   /* #475569 - secondary text */
+  --surface-200: 51 65 85;    /* #334155 - primary body text */
+  --surface-100: 30 41 59;    /* #1e293b - deep accents */
+  --surface-50: 15 23 42;     /* #0f172a - darkest headings */
+  --background: #f8fafc;
+  --foreground: #0f172a;
+}
+
+html.dark {
+  /* Dark Mode CSS Variables */
+  --surface-950: 11 15 25;    /* #0b0f19 - main canvas */
+  --surface-900: 15 23 42;    /* #0f172a - cards */
+  --surface-850: 22 32 48;    /* #162030 - card hover */
+  --surface-800: 30 41 59;    /* #1e293b - soft borders */
+  --surface-700: 51 65 85;    /* #334155 - borders */
+  --surface-400: 148 163 184; /* #94a3b8 - muted text */
+  --surface-300: 203 213 225; /* #cbd5e1 - secondary text */
+  --surface-200: 226 232 240; /* #e2e8f0 - body text */
+  --surface-100: 241 245 249; /* #f1f5f9 - light accents */
+  --surface-50: 248 250 252;  /* #f8fafc - bright text */
+  --background: #0b0f19;
+  --foreground: #f8fafc;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-feature-settings: "rlig" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Light mode text contrast enhancements */
+html:not(.dark) h1,
+html:not(.dark) h2,
+html:not(.dark) h3,
+html:not(.dark) h4,
+html:not(.dark) h5,
+html:not(.dark) h6 {
+  color: #0f172a;
+}
+
+html:not(.dark) .text-white:not([class*="bg-red-"]):not([class*="bg-brand-"]):not([class*="bg-blue-"]):not([class*="bg-emerald-"]):not([class*="bg-indigo-"]):not([class*="bg-gradient-"]):not([class*="bg-black"]) {
+  color: #0f172a;
+}
+
+/* Ensure buttons and badges with colorful backgrounds keep white text */
+button[class*="bg-red-"],
+button[class*="bg-brand-"],
+a[class*="bg-red-"],
+a[class*="bg-brand-"],
+[class*="bg-gradient-to"] {
+  color: #ffffff;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--surface-800));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--surface-700));
+}
