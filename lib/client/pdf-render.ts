@@ -39,8 +39,12 @@ export class ClientPDFRenderer {
     scale: number = 1.0
   ): Promise<{ width: number; height: number }> {
     const pdfjs = await this.getPdfJs();
-    // Copy array buffer to avoid detach errors
-    const doc = await pdfjs.getDocument({ data: pdfBuffer.slice(0) }).promise;
+    // Copy array buffer to avoid detach errors and disable eval for security
+    const doc = await pdfjs.getDocument({
+      data: pdfBuffer.slice(0),
+      isEvalSupported: false,
+      useSystemFonts: true,
+    }).promise;
     const page = await doc.getPage(pageNumber);
 
     const viewport = page.getViewport({ scale });
@@ -67,7 +71,11 @@ export class ClientPDFRenderer {
     quality: number = 0.92
   ): Promise<RenderedPageImage[]> {
     const pdfjs = await this.getPdfJs();
-    const doc = await pdfjs.getDocument({ data: pdfBuffer.slice(0) }).promise;
+    const doc = await pdfjs.getDocument({
+      data: pdfBuffer.slice(0),
+      isEvalSupported: false,
+      useSystemFonts: true,
+    }).promise;
     const totalPages = doc.numPages;
     const results: RenderedPageImage[] = [];
 
@@ -121,7 +129,11 @@ export class ClientPDFRenderer {
     pdfBuffer: ArrayBuffer
   ): Promise<{ text: string; pages: Array<{ pageNumber: number; text: string }> }> {
     const pdfjs = await this.getPdfJs();
-    const doc = await pdfjs.getDocument({ data: pdfBuffer.slice(0) }).promise;
+    const doc = await pdfjs.getDocument({
+      data: pdfBuffer.slice(0),
+      isEvalSupported: false,
+      useSystemFonts: true,
+    }).promise;
     const totalPages = doc.numPages;
     const pagesText: Array<{ pageNumber: number; text: string }> = [];
     let fullText = "";
