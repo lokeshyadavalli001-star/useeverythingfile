@@ -79,6 +79,7 @@ export const Footer: React.FC = () => {
               Company & Help
             </h4>
             <ul className="space-y-2 text-xs">
+              <li><Link href="/compress-file" className="hover:text-emerald-400 text-emerald-400 font-semibold transition-colors">Compress Any File</Link></li>
               <li><Link href="/pdf-to-word" className="hover:text-white transition-colors">PDF → Word (.docx)</Link></li>
               <li><Link href="/word-to-pdf" className="hover:text-white transition-colors">Word (.docx) → PDF</Link></li>
               <li className="pt-2"><Link href="/privacy" className="hover:text-white transition-colors font-medium text-surface-300">Privacy Policy</Link></li>

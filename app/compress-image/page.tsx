@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { ToolLayout } from "@/components/shared/ToolLayout";
 import { FileDropzone } from "@/components/shared/FileDropzone";
 import { ResultCard } from "@/components/shared/ResultCard";
@@ -66,13 +67,24 @@ export default function CompressImagePage() {
       ) : (
         <div className="w-full max-w-xl mx-auto space-y-6">
           {!file ? (
-            <FileDropzone
-              acceptedExtensions={[".jpg", ".jpeg", ".png", ".webp"]}
-              maxFiles={1}
-              onFilesSelected={handleFileSelected}
-              title="Drop image to compress"
-              subtitle="Supports JPG, PNG, and WebP images"
-            />
+            <div className="space-y-4">
+              <FileDropzone
+                acceptedExtensions={[".jpg", ".jpeg", ".png", ".webp"]}
+                maxFiles={1}
+                onFilesSelected={handleFileSelected}
+                title="Drop image to compress"
+                subtitle="Supports JPG, PNG, and WebP images"
+              />
+              <div className="p-3 rounded-xl bg-surface-900/60 border border-surface-800 text-center">
+                <Link
+                  href="/compress-file"
+                  className="inline-flex items-center gap-1.5 text-xs text-surface-400 hover:text-emerald-400 transition-colors"
+                >
+                  <span>Need to compress Word, Excel, PDF, Audio, or other files?</span>
+                  <span className="font-semibold text-emerald-400 underline">Try Universal File Compressor →</span>
+                </Link>
+              </div>
+            </div>
           ) : (
             <div className="p-6 rounded-2xl bg-surface-900 border border-surface-800 space-y-6">
               <div className="flex items-center gap-4 p-4 rounded-xl bg-surface-950 border border-surface-800">

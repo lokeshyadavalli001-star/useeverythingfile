@@ -10,6 +10,7 @@ import {
   Grid,
   Menu,
   X,
+  Archive,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/shared/ThemeToggle";
 
@@ -33,6 +34,13 @@ export const Header: React.FC = () => {
 
         {/* Desktop Direct Tool Navigation (iLovePDF Style) */}
         <nav className="hidden md:flex items-center gap-6 text-sm font-semibold text-surface-200">
+          <Link
+            href="/compress-file"
+            className="hover:text-emerald-400 text-emerald-400 font-bold transition-colors py-1 flex items-center gap-1.5"
+          >
+            <Archive className="w-4 h-4 text-emerald-400" />
+            <span>Compress File</span>
+          </Link>
           <Link
             href="/merge-pdf"
             className="hover:text-red-500 transition-colors py-1 flex items-center gap-1.5"
@@ -92,6 +100,14 @@ export const Header: React.FC = () => {
       {mobileMenuOpen && (
         <div className="md:hidden px-4 pt-2 pb-6 bg-surface-950 border-b border-surface-800 space-y-2">
           <Link
+            href="/compress-file"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center gap-3 p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-semibold"
+          >
+            <Archive className="w-5 h-5 text-emerald-400" />
+            <span>Compress Any File</span>
+          </Link>
+          <Link
             href="/merge-pdf"
             onClick={() => setMobileMenuOpen(false)}
             className="flex items-center gap-3 p-3 rounded-xl bg-surface-900/60 text-surface-50 font-medium hover:bg-surface-850"
@@ -129,7 +145,7 @@ export const Header: React.FC = () => {
             className="flex items-center gap-3 p-3 rounded-xl bg-red-600/10 border border-red-500/30 text-red-500 font-semibold"
           >
             <Grid className="w-5 h-5 text-red-500" />
-            <span>All 22 Tools</span>
+            <span>All 23 Tools</span>
           </Link>
 
           {/* Theme Selector inside mobile drawer */}

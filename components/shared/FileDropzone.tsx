@@ -52,12 +52,19 @@ export const FileDropzone: React.FC<FileDropzoneProps> = ({
         // Extension validation
         const extMatch = file.name.toLowerCase().match(/\.([a-z0-9]+)$/);
         const ext = extMatch ? `.${extMatch[1]}` : "";
-        const isExtAllowed = acceptedExtensions.some(
-          (ae) => ae.toLowerCase() === ext || (ae.toLowerCase() === ".jpg" && ext === ".jpeg")
-        );
+        const isWildcard = acceptedExtensions.includes("*") || acceptedExtensions.includes("*.*");
+        const isExtAllowed =
+          isWildcard ||
+          acceptedExtensions.some(
+            (ae) => ae.toLowerCase() === ext || (ae.toLowerCase() === ".jpg" && ext === ".jpeg")
+          );
 
         if (!isExtAllowed) {
-          setErrorMessage(`File format not supported. Allowed: ${acceptedExtensions.join(", ")}`);
+          const displayAllowed =
+            acceptedExtensions.length > 8
+              ? `${acceptedExtensions.slice(0, 8).join(", ")} and more`
+              : acceptedExtensions.join(", ");
+          setErrorMessage(`File format not supported. Allowed: ${displayAllowed}`);
           return;
         }
 
@@ -129,7 +136,7 @@ export const FileDropzone: React.FC<FileDropzoneProps> = ({
           ref={inputRef}
           type="file"
           multiple={maxFiles > 1}
-          accept={acceptedExtensions.join(",")}
+          accept={acceptedExtensions.includes("*") ? undefined : acceptedExtensions.filter((e) => e !== "*").join(",")}
           onChange={handleFileChange}
           className="hidden"
           disabled={disabled}
@@ -154,7 +161,12 @@ export const FileDropzone: React.FC<FileDropzoneProps> = ({
           </button>
 
           <div className="flex flex-wrap items-center justify-center gap-2 text-xs text-surface-400 mt-2">
-            <span>Supports: {acceptedExtensions.join(", ")}</span>
+            <span>
+              Supports:{" "}
+              {acceptedExtensions.includes("*") || acceptedExtensions.length > 10
+                ? "All common file formats (Office, PDF, Images, Code, Audio, Video, etc.)"
+                : acceptedExtensions.join(", ")}
+            </span>
             <span>•</span>
             <span>Max {maxSizeMB} MB</span>
             {maxFiles > 1 && (

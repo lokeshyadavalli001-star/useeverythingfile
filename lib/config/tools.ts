@@ -19,6 +19,54 @@ export interface ToolDefinition {
 }
 
 export const TOOLS: ToolDefinition[] = [
+  // --- UNIVERSAL FILE COMPRESSOR ---
+  {
+    id: "compress-file",
+    slug: "compress-file",
+    name: "Compress File",
+    category: "document",
+    tagline: "Compress any file directly without converting to ZIP",
+    description: "Universal file compressor for Office docs, PDFs, images, code, audio, video, text, and binary files. 100% private in-browser compression.",
+    iconName: "Archive",
+    popular: true,
+    clientSideOnly: true,
+    acceptedExtensions: [
+      ".txt", ".docx", ".pdf", ".xlsx", ".pptx", ".csv", ".md", ".rtf", ".odt",
+      ".jpg", ".jpeg", ".png", ".gif", ".svg", ".webp", ".bmp",
+      ".mp4", ".mov", ".avi", ".mkv",
+      ".mp3", ".wav", ".flac", ".m4a",
+      ".zip", ".rar", ".7z", ".tar.gz",
+      ".exe", ".dmg", ".apk", ".app",
+      ".html", ".css", ".js", ".py", ".cpp", ".java", ".json", ".xml", ".sql",
+      ".ini", ".cfg", ".log", ".bak", ".iso", ".torrent", ".font", ".ttf", ".otf", ".woff", ".woff2", "*"
+    ],
+    maxFiles: 1,
+    outputExtension: "auto",
+    features: [
+      "No ZIP container: directly compresses into native file format",
+      "Supports Office (.docx, .xlsx, .pptx), PDF, Images, Code, Audio & Binary",
+      "Level 9 Deflate & smart stream optimization",
+      "100% Client-Side: zero files sent to servers"
+    ],
+    seoKeywords: [
+      "compress file", "file compressor online", "compress docx", "compress xlsx",
+      "compress any file", "compress without zip", "reduce file size", "direct file compressor"
+    ],
+    faqs: [
+      {
+        question: "Does this tool convert my file into a .zip archive?",
+        answer: "No! Unlike other online tools, Everything File compresses your file directly in its native format. A .docx remains a .docx, a .pdf remains a .pdf, and a .jpg remains a .jpg."
+      },
+      {
+        question: "Are my files uploaded to your servers?",
+        answer: "Never. All compression routines execute 100% locally inside your browser using WebAssembly, Canvas, and client-side stream engines."
+      },
+      {
+        question: "What file types can I compress?",
+        answer: "You can compress over 48+ file formats including Word (.docx), Excel (.xlsx), PowerPoint (.pptx), PDFs, Images (JPG, PNG, WebP, SVG), Code (JS, HTML, CSS, JSON, Python), Audio, and general binary files."
+      }
+    ]
+  },
   // --- PDF TOOLS ---
   {
     id: "merge-pdf",

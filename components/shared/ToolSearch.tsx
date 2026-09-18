@@ -26,6 +26,7 @@ import {
   FilePlus2,
   FileText,
   FileEdit,
+  Archive,
 } from "lucide-react";
 import { TOOLS, ToolDefinition } from "@/lib/config/tools";
 
@@ -36,6 +37,11 @@ interface ToolStyle {
 }
 
 const TOOL_STYLES: Record<string, ToolStyle> = {
+  "compress-file": {
+    icon: Archive,
+    iconBg: "bg-emerald-500/15 text-emerald-400 border-emerald-500/30",
+    cardHover: "hover:border-emerald-500/50 hover:shadow-emerald-500/5",
+  },
   "merge-pdf": {
     icon: Layers,
     iconBg: "bg-red-500/15 text-red-500 border-red-500/30",
@@ -148,7 +154,7 @@ const TOOL_STYLES: Record<string, ToolStyle> = {
   },
 };
 
-type FilterCategory = "all" | "pdf" | "image" | "convert";
+type FilterCategory = "all" | "compress" | "pdf" | "image" | "convert";
 
 export const ToolSearch: React.FC = () => {
   const [query, setQuery] = useState("");
@@ -157,7 +163,11 @@ export const ToolSearch: React.FC = () => {
   const filteredTools = useMemo(() => {
     return TOOLS.filter((tool) => {
       // Category filter logic
-      if (selectedCategory === "pdf") {
+      if (selectedCategory === "compress") {
+        if (!tool.slug.includes("compress")) {
+          return false;
+        }
+      } else if (selectedCategory === "pdf") {
         if (tool.category !== "pdf" && tool.slug !== "pdf-to-word" && tool.slug !== "word-to-pdf") {
           return false;
         }
@@ -190,10 +200,11 @@ export const ToolSearch: React.FC = () => {
         {/* Category Filter Pills */}
         <div className="flex items-center justify-center gap-2 flex-wrap">
           {[
-            { id: "all", label: "All Tools", count: 22 },
-            { id: "pdf", label: "PDF Tools", count: 14 },
-            { id: "image", label: "Image Tools", count: 8 },
-            { id: "convert", label: "Convert", count: 10 },
+            { id: "all", label: "All Tools", count: TOOLS.length },
+            { id: "compress", label: "Compress", count: TOOLS.filter((t) => t.slug.includes("compress")).length },
+            { id: "pdf", label: "PDF Tools", count: TOOLS.filter((t) => t.category === "pdf" || t.slug.includes("pdf")).length },
+            { id: "image", label: "Image Tools", count: TOOLS.filter((t) => t.category === "image").length },
+            { id: "convert", label: "Convert", count: TOOLS.filter((t) => t.slug.includes("to") || (t.category === "document" && t.slug !== "compress-file")).length },
           ].map((cat) => (
             <button
               key={cat.id}
