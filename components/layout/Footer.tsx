@@ -94,11 +94,6 @@ export const Footer: React.FC = () => {
         <div className="pt-8 border-t border-surface-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <p>© {new Date().getFullYear()} Everything File. 100% Free & Private File Utilities.</p>
           <div className="flex items-center gap-4 text-surface-400">
-            <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-900 border border-surface-800 text-[11px] text-emerald-400 font-medium">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Ping: 3.5 ms</span>
-            </div>
-            <span>•</span>
             <span>Files Stay Private</span>
             <span>•</span>
             <span>No File Retention</span>

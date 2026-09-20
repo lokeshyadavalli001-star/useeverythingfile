@@ -77,12 +77,6 @@ export const Header: React.FC = () => {
             <span>All Tools</span>
           </Link>
 
-          {/* Live Ping Indicator */}
-          <div className="hidden xl:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-900 border border-surface-800 text-[11px] font-medium text-emerald-400">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span>3.5 ms</span>
-          </div>
-
           {/* Theme Switcher */}
           <div className="pl-2 border-l border-surface-800">
             <ThemeToggle />
@@ -153,15 +147,6 @@ export const Header: React.FC = () => {
             <Grid className="w-5 h-5 text-red-500" />
             <span>All 23 Tools</span>
           </Link>
-
-          {/* Live Ping Indicator in Mobile Drawer */}
-          <div className="pt-2 flex items-center justify-between px-3 py-2 rounded-xl bg-surface-900/40 border border-surface-800 text-xs">
-            <span className="text-surface-400">Server Latency / Ping</span>
-            <div className="flex items-center gap-1.5 text-emerald-400 font-medium font-mono text-[11px]">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>3.5 ms</span>
-            </div>
-          </div>
 
           {/* Theme Selector inside mobile drawer */}
           <div className="pt-2">
