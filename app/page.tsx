@@ -2,6 +2,7 @@
 
 import React from "react";
 import { ToolSearch } from "@/components/shared/ToolSearch";
+import { NativeBannerAd } from "@/components/ads/NativeBannerAd";
 
 export default function HomePage() {
   return (
@@ -17,8 +18,9 @@ export default function HomePage() {
       </section>
 
       {/* Main Services Grid (Front and Center) */}
-      <section id="tools" className="pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <section id="tools" className="pb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <ToolSearch />
+        <NativeBannerAd className="mt-12" />
       </section>
     </div>
   );

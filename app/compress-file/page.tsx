@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { ToolLayout } from "@/components/shared/ToolLayout";
 import { FileDropzone } from "@/components/shared/FileDropzone";
 import { ResultCard } from "@/components/shared/ResultCard";
+import { NativeBannerAd } from "@/components/ads/NativeBannerAd";
 import { TOOL_MAP } from "@/lib/config/tools";
 import { UniversalFileCompressor, UniversalCompressorOptions } from "@/lib/client/universal-compressor";
 import {
@@ -305,6 +306,7 @@ export default function CompressFilePage() {
           )}
         </div>
       )}
+      <NativeBannerAd className="mt-8" />
     </ToolLayout>
   );
 }

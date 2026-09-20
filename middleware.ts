@@ -57,11 +57,12 @@ export function middleware(request: NextRequest) {
   // 4. Strict Content Security Policy (Zero 'unsafe-inline' in script-src & style-src)
   const cspHeader = `
     default-src 'self';
-    script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://va.vercel-scripts.com;
+    script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://va.vercel-scripts.com https://*.profitableratecpmnetwork.com https://www.profitableratecpmnetwork.com;
     style-src 'self' 'nonce-${nonce}' https://fonts.googleapis.com;
     font-src 'self' data: https://fonts.gstatic.com;
-    img-src 'self' data: blob:;
-    connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com blob:;
+    img-src 'self' data: blob: https:;
+    connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com blob: https://*.profitableratecpmnetwork.com https://www.profitableratecpmnetwork.com;
+    frame-src 'self' https://*.profitableratecpmnetwork.com https://www.profitableratecpmnetwork.com https:;
     worker-src 'self' blob:;
     object-src 'none';
     frame-ancestors 'none';

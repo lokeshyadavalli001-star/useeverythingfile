@@ -51,6 +51,16 @@ export default async function RootLayout({
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <script src="/theme-init.js" nonce={nonce} />
+        <script
+          async
+          src="https://pl31435145.profitableratecpmnetwork.com/07/e1/48/07e1481f0901a9724f0b126a97bd39cc.js"
+          nonce={nonce}
+        />
+        <script
+          async
+          src="https://pl31435147.profitableratecpmnetwork.com/72/b3/55/72b35598045419c9a3a3b2875d6fd90e.js"
+          nonce={nonce}
+        />
       </head>
       <body className="min-h-screen flex flex-col bg-surface-950 text-surface-200 antialiased selection:bg-red-500/30 selection:text-red-300">
         <ThemeProvider>
