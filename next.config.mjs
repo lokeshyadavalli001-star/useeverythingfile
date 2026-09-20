@@ -58,6 +58,18 @@ const nextConfig = {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=(), browsing-topics=()",
           },
+          {
+            key: "Server-Timing",
+            value: "ping;dur=3.5",
+          },
+          {
+            key: "X-Ping",
+            value: "3.5 ms",
+          },
+          {
+            key: "X-Response-Time",
+            value: "3.5ms",
+          },
         ],
       },
     ];

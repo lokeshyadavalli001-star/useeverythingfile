@@ -5,10 +5,9 @@ export const dynamic = "force-dynamic";
 export async function GET() {
   return NextResponse.json(
     {
-      status: "healthy",
-      service: "everything-file",
+      status: "ok",
       ping: "3.5 ms",
-      latency: "3.5 ms",
+      latency_ms: 3.5,
       timestamp: new Date().toISOString(),
     },
     {
