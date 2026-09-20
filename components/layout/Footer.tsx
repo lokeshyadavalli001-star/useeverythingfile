@@ -90,8 +90,26 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
+        {/* Partner Referral Banner */}
+        <div className="pt-8 pb-4 flex flex-col items-center justify-center">
+          <a
+            href="https://beta.publishers.adsterra.com/referral/xBrKP5ngSW"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            className="block max-w-full overflow-hidden rounded-xl border border-surface-800/80 hover:border-surface-700 transition-all opacity-85 hover:opacity-100 shadow-sm"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://landings-cdn.adsterratech.com/referralBanners/png/728%20x%2090%20px.png"
+              alt="Monetize your website with Adsterra Network"
+              className="w-full max-w-[728px] h-auto object-contain block"
+              loading="lazy"
+            />
+          </a>
+        </div>
+
         {/* Bottom Guarantee */}
-        <div className="pt-8 border-t border-surface-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+        <div className="pt-6 border-t border-surface-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <p>© {new Date().getFullYear()} Everything File. 100% Free & Private File Utilities.</p>
           <div className="flex items-center gap-4 text-surface-400">
             <span>Files Stay Private</span>
