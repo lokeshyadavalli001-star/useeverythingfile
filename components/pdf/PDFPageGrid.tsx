@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import clsx from "clsx";
 import { RotateCw, Trash2, ArrowLeft, ArrowRight, Check } from "lucide-react";
 import { ClientPDFRenderer } from "@/lib/client/pdf-render";
 
@@ -154,11 +155,13 @@ const PDFPageCard: React.FC<PDFPageCardProps> = ({
       {/* Page Canvas Container with Rotation */}
       <div className="relative aspect-[1/1.414] w-full rounded-xl bg-white overflow-hidden flex items-center justify-center p-1 shadow-inner">
         <div
-          style={{
-            transform: `rotate(${page.rotation}deg)`,
-            transition: "transform 0.2s ease-out",
-          }}
-          className="w-full h-full flex items-center justify-center"
+          className={clsx(
+            "w-full h-full flex items-center justify-center transition-transform duration-200 ease-out",
+            page.rotation % 360 === 90 && "rotate-90",
+            page.rotation % 360 === 180 && "rotate-180",
+            page.rotation % 360 === 270 && "-rotate-90",
+            (page.rotation % 360 === 0 || !page.rotation) && "rotate-0"
+          )}
         >
           <canvas ref={canvasRef} className="max-w-full max-h-full object-contain" />
         </div>

@@ -61,6 +61,24 @@ export const ImageCropEditor: React.FC<ImageCropEditorProps> = ({
 
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
+  const cropBoxOverlayRef = useRef<HTMLDivElement | null>(null);
+
+  const setCropBoxOverlayRef = (node: HTMLDivElement | null) => {
+    cropBoxOverlayRef.current = node;
+    if (node) {
+      node.style.transform = `translate3d(${cropBox.x}px, ${cropBox.y}px, 0)`;
+      node.style.width = `${cropBox.width}px`;
+      node.style.height = `${cropBox.height}px`;
+    }
+  };
+
+  useEffect(() => {
+    if (cropBoxOverlayRef.current) {
+      cropBoxOverlayRef.current.style.transform = `translate3d(${cropBox.x}px, ${cropBox.y}px, 0)`;
+      cropBoxOverlayRef.current.style.width = `${cropBox.width}px`;
+      cropBoxOverlayRef.current.style.height = `${cropBox.height}px`;
+    }
+  }, [cropBox.x, cropBox.y, cropBox.width, cropBox.height]);
 
   // Active drag state
   const dragRef = useRef<{
@@ -401,11 +419,7 @@ export const ImageCropEditor: React.FC<ImageCropEditorProps> = ({
             {/* Draggable & Resizable Crop Box Overlay */}
             {displayedSize.width > 0 && cropBox.width > 0 && (
               <div
-                style={{
-                  transform: `translate3d(${cropBox.x}px, ${cropBox.y}px, 0)`,
-                  width: `${cropBox.width}px`,
-                  height: `${cropBox.height}px`,
-                }}
+                ref={setCropBoxOverlayRef}
                 className="absolute top-0 left-0 border-2 border-white shadow-[0_0_0_9999px_rgba(0,0,0,0.65)] cursor-move select-none touch-none"
                 onPointerDown={(e) => handlePointerDown(e, "move")}
               >
