@@ -57,13 +57,13 @@ export function middleware(request: NextRequest) {
   // 4. Strict Content Security Policy (Zero 'unsafe-inline' in script-src & style-src)
   const cspHeader = `
     default-src 'self';
-    script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://va.vercel-scripts.com https://*.profitableratecpmnetwork.com https://www.profitableratecpmnetwork.com https://5gvci.com https://*.5gvci.com;
+    script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://va.vercel-scripts.com https://*.profitableratecpmnetwork.com https://www.profitableratecpmnetwork.com https://5gvci.com https://*.5gvci.com https://quge5.com https://*.quge5.com;
     style-src 'self' 'nonce-${nonce}' https://fonts.googleapis.com;
     font-src 'self' data: https://fonts.gstatic.com;
     img-src 'self' data: blob: https:;
-    connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com blob: https://*.profitableratecpmnetwork.com https://www.profitableratecpmnetwork.com https://5gvci.com https://*.5gvci.com;
-    frame-src 'self' https://*.profitableratecpmnetwork.com https://www.profitableratecpmnetwork.com https:;
-    worker-src 'self' blob: https://5gvci.com https://*.5gvci.com;
+    connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com blob: https://*.profitableratecpmnetwork.com https://www.profitableratecpmnetwork.com https://5gvci.com https://*.5gvci.com https://quge5.com https://*.quge5.com;
+    frame-src 'self' https://*.profitableratecpmnetwork.com https://www.profitableratecpmnetwork.com https://quge5.com https://*.quge5.com https:;
+    worker-src 'self' blob: https://5gvci.com https://*.5gvci.com https://quge5.com https://*.quge5.com;
     object-src 'none';
     frame-ancestors 'none';
     base-uri 'self';

@@ -74,6 +74,13 @@ export default async function RootLayout({
           src="https://pl31435147.profitableratecpmnetwork.com/72/b3/55/72b35598045419c9a3a3b2875d6fd90e.js"
           nonce={nonce}
         />
+        <script
+          async
+          src="https://quge5.com/88/tag.min.js"
+          data-zone="283647"
+          data-cfasync="false"
+          nonce={nonce}
+        />
       </head>
       <body className="min-h-screen flex flex-col bg-surface-950 text-surface-200 antialiased selection:bg-red-500/30 selection:text-red-300">
         <ThemeProvider>
