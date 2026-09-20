@@ -42,6 +42,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     siteName: "Everything File",
   },
+  verification: {
+    google: "googlecbc51d5b6d0a24bb",
+  },
 };
 
 export const viewport = {

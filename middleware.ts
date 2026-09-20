@@ -123,7 +123,8 @@ export const config = {
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
      * - theme-init.js (static theme script)
+     * - google*.html (Google Search Console verification file)
      */
-    "/((?!_next/static|_next/image|favicon.ico|theme-init.js).*)",
+    "/((?!_next/static|_next/image|favicon.ico|theme-init.js|google[a-z0-9]+\\.html).*)",
   ],
 };
