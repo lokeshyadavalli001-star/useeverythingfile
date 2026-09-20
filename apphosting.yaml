@@ -1,0 +1,9 @@
+# Settings for Firebase App Hosting
+# Docs: https://firebase.google.com/docs/app-hosting/configure
+
+runConfig:
+  minInstances: 0 # Scales to zero when idle (no cost)
+  maxInstances: 10 # Caps maximum instances to prevent runaway costs
+  concurrency: 80 # Concurrent requests per instance
+  cpu: 1 # 1 vCPU
+  memoryMiB: 1024 # 1 GB RAM for fast file processing
