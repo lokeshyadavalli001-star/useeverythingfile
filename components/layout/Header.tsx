@@ -14,6 +14,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/shared/ThemeToggle";
+import { AD_CONFIG } from "@/lib/config/ads";
 
 export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -78,7 +79,7 @@ export const Header: React.FC = () => {
             <span>All Tools</span>
           </Link>
           <a
-            href="https://www.profitableratecpmnetwork.com/ghsjpynsh?key=5efec245aab442f6788be2a57ca6c01d"
+            href={AD_CONFIG.smartlink1}
             target="_blank"
             rel="sponsored noopener noreferrer"
             className="px-3 py-1.5 rounded-xl bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/30 hover:border-amber-500/60 text-amber-400 hover:text-amber-300 transition-all flex items-center gap-1.5 text-xs font-bold tracking-wide shadow-sm"
@@ -158,14 +159,24 @@ export const Header: React.FC = () => {
             <span>All 23 Tools</span>
           </Link>
           <a
-            href="https://www.profitableratecpmnetwork.com/ghsjpynsh?key=5efec245aab442f6788be2a57ca6c01d"
+            href={AD_CONFIG.smartlink1}
             target="_blank"
             rel="sponsored noopener noreferrer"
             onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center gap-3 p-3 rounded-xl bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/30 text-amber-400 font-semibold"
+            className="flex items-center gap-3 p-3 rounded-xl bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/30 text-amber-400 font-semibold text-sm"
           >
             <Sparkles className="w-5 h-5 text-amber-400" />
             <span>🔥 Special Deals & Offers</span>
+          </a>
+          <a
+            href={AD_CONFIG.smartlink2}
+            target="_blank"
+            rel="sponsored noopener noreferrer"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center gap-3 p-3 rounded-xl bg-surface-900/80 border border-surface-800 text-surface-300 hover:text-amber-300 font-medium text-sm"
+          >
+            <span className="text-amber-400">🎁</span>
+            <span>Exclusive Partner Perks</span>
           </a>
 
           {/* Theme Selector inside mobile drawer */}

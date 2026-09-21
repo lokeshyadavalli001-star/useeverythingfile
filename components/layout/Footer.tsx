@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Layers, ShieldCheck, Lock, Heart } from "lucide-react";
+import { AD_CONFIG } from "@/lib/config/ads";
 
 export const Footer: React.FC = () => {
   return (
@@ -86,6 +87,16 @@ export const Footer: React.FC = () => {
               <li><Link href="/how-it-works" className="hover:text-white transition-colors font-medium text-surface-300">How It Works</Link></li>
               <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
+              <li className="pt-2">
+                <a
+                  href={AD_CONFIG.smartlink3}
+                  target="_blank"
+                  rel="sponsored noopener noreferrer"
+                  className="text-amber-400 hover:text-amber-300 font-semibold flex items-center gap-1 transition-colors"
+                >
+                  <span>Featured Partner Perks ↗</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -111,18 +122,27 @@ export const Footer: React.FC = () => {
         {/* Bottom Guarantee */}
         <div className="pt-6 border-t border-surface-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <p>© {new Date().getFullYear()} Everything File. 100% Free & Private File Utilities.</p>
-          <div className="flex items-center gap-4 text-surface-400">
+          <div className="flex flex-wrap items-center gap-4 text-surface-400">
             <span>Files Stay Private</span>
             <span>•</span>
             <span>No File Retention</span>
             <span>•</span>
             <a
-              href="https://www.profitableratecpmnetwork.com/ghsjpynsh?key=5efec245aab442f6788be2a57ca6c01d"
+              href={AD_CONFIG.smartlink3}
               target="_blank"
               rel="sponsored noopener noreferrer"
-              className="text-amber-400/80 hover:text-amber-300 transition-colors font-medium underline"
+              className="text-amber-400/90 hover:text-amber-300 transition-colors font-medium underline"
             >
               Sponsored Offers
+            </a>
+            <span>•</span>
+            <a
+              href={AD_CONFIG.smartlink2}
+              target="_blank"
+              rel="sponsored noopener noreferrer"
+              className="text-amber-400/90 hover:text-amber-300 transition-colors font-medium underline"
+            >
+              Partner Deals
             </a>
           </div>
         </div>
