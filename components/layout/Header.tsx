@@ -11,6 +11,7 @@ import {
   Menu,
   X,
   Archive,
+  Sparkles,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/shared/ThemeToggle";
 
@@ -76,6 +77,15 @@ export const Header: React.FC = () => {
             <Grid className="w-3.5 h-3.5 text-red-500" />
             <span>All Tools</span>
           </Link>
+          <a
+            href="https://www.profitableratecpmnetwork.com/ghsjpynsh?key=5efec245aab442f6788be2a57ca6c01d"
+            target="_blank"
+            rel="sponsored noopener noreferrer"
+            className="px-3 py-1.5 rounded-xl bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/30 hover:border-amber-500/60 text-amber-400 hover:text-amber-300 transition-all flex items-center gap-1.5 text-xs font-bold tracking-wide shadow-sm"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+            <span>Special Deals</span>
+          </a>
 
           {/* Theme Switcher */}
           <div className="pl-2 border-l border-surface-800">
@@ -147,6 +157,16 @@ export const Header: React.FC = () => {
             <Grid className="w-5 h-5 text-red-500" />
             <span>All 23 Tools</span>
           </Link>
+          <a
+            href="https://www.profitableratecpmnetwork.com/ghsjpynsh?key=5efec245aab442f6788be2a57ca6c01d"
+            target="_blank"
+            rel="sponsored noopener noreferrer"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center gap-3 p-3 rounded-xl bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/30 text-amber-400 font-semibold"
+          >
+            <Sparkles className="w-5 h-5 text-amber-400" />
+            <span>🔥 Special Deals & Offers</span>
+          </a>
 
           {/* Theme Selector inside mobile drawer */}
           <div className="pt-2">

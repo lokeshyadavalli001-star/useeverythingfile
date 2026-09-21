@@ -117,7 +117,7 @@ export const Footer: React.FC = () => {
             <span>No File Retention</span>
             <span>•</span>
             <a
-              href="https://www.profitableratecpmnetwork.com/fmzmhxeg?key=1b54272d62402808e3f37f444566d0e7"
+              href="https://www.profitableratecpmnetwork.com/ghsjpynsh?key=5efec245aab442f6788be2a57ca6c01d"
               target="_blank"
               rel="sponsored noopener noreferrer"
               className="text-amber-400/80 hover:text-amber-300 transition-colors font-medium underline"
